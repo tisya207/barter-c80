@@ -7,7 +7,7 @@ var firebaseConfig = {
   projectId: "barter-77",
   storageBucket: "barter-77.appspot.com",
   messagingSenderId: "550806384379",
-  appId: "1:550806384379:web:e98c327b2d53f12e72ca5e",
+  appId: "1:550806384379:web:e98c327b2d53f12e72ca5e"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

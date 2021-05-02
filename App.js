@@ -1,34 +1,19 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-
-import { AppTabNavigator } from './components/AppTabNavigator';
-import {createDrawerNavigator} from 'react-navigation-drawer';
-import CustomSideBarMenu from './components/CustomSideBarMenu ';
-import SignupLogin from "./screens/SignupLogin";
-import SettingScreen from './screens/SettingScreen';
-import HomeScreen from './screens/HomeScreen';
-import ExchangeScreen from './screens/ExchangeScreen';
+import React from 'react';
+import { createAppContainer, createSwitchNavigator,} from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import WelcomeScreen from './screens/WelcomeScreen';
+import { AppTabNavigator } from './components/AppTabNavigator'
 
 export default function App() {
   return (
-    <SignupLogin/>
+    <AppContainer/>
   );
 }
 
-const AppDrawerNavigator= createDrawerNavigator({
-  home:{screen:AppTabNavigator},
-  setting:{screen:SettingScreen},
-},
-
-{contentComponent:CustomSideBarMenu},
-
-{initialRouteName:'home'})
 
 const switchNavigator = createSwitchNavigator({
-  WelcomeScreen:{screen: SignupLoginScreen},
+  WelcomeScreen:{screen: WelcomeScreen},
   BottomTab:{screen: AppTabNavigator}
 })
 
 const AppContainer =  createAppContainer(switchNavigator);
-const AppContainer = createAppContainer(AppDrawerNavigator);
